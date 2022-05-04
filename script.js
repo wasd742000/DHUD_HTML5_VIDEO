@@ -73,7 +73,7 @@ window.onload = function () {
 
     //Change button to "Play" when video has ended
     video.onended = function () {
-        button.innerHTML = "Play";
+        button.innerHTML = "Play demo";
     };
 };
 

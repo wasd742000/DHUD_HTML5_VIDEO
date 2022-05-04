@@ -8,7 +8,7 @@ window.onload = function () {
     var context2 = canvas2.getContext("2d");
 
     var video = document.getElementById("myVideo");
-    var slider = document.getElementById("intensity");
+    //var slider = document.getElementById("intensity");
     var button = document.getElementById("myButton");
 
     //Threshold for edge detection
@@ -26,10 +26,10 @@ window.onload = function () {
         }
     };
 
-    //Intensity slider event handler (threshold = MAX - intensity)
-    slider.oninput = function () {
-        threshold = 500 - parseInt(slider.value);
-    };
+    // //Intensity slider event handler (threshold = MAX - intensity)
+    // slider.oninput = function () {
+    //     threshold = 500 - parseInt(slider.value);
+    // };
 
     //Do some initializations when video is ready
     video.oncanplay = function () {
@@ -73,7 +73,7 @@ window.onload = function () {
 
     //Change button to "Play" when video has ended
     video.onended = function () {
-        button.innerHTML = "Play demo";
+        button.innerHTML = "Play";
     };
 };
 

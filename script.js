@@ -12,7 +12,7 @@ window.onload = function () {
     var button = document.getElementById("myButton");
 
     //Threshold for edge detection
-    var threshold = 250;
+    var threshold = 350;
 
     //Play/Pause button event handler
     button.onclick = function () {

@@ -22,7 +22,7 @@ window.onload = function () {
         }
         else {
             video.pause();
-            button.innerHTML = "Play";
+            button.innerHTML = "Continue";
         }
     };
 
@@ -35,9 +35,16 @@ window.onload = function () {
     video.oncanplay = function () {
         var vid = this;
 
+        if (vid.videoWidth > 640 && vid.videoHeight > 360)
+        {
+            canvas1.width = canvas2.width = 640;
+            canvas1.height = canvas2.height = 360; 
+        }
+        else
+        {
         canvas1.width = canvas2.width = vid.videoWidth;
         canvas1.height = canvas2.height = vid.videoHeight;
-
+        }
         button.disabled = false;
     };
 
@@ -59,14 +66,14 @@ window.onload = function () {
                 context2.putImageData(frameEdge, 0, 0);
 
                 //Loop these things every 1000/30 miliseconds (30 fps)
-                setTimeout(loop, 1000 / 30);
+                setTimeout(loop, 1000 / 60);
             }
         })();
     };
 
     //Change button to "Play" when video has ended
     video.onended = function () {
-        button.innerHTML = "Play";
+        button.innerHTML = "Play demo";
     };
 };
 
